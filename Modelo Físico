@@ -1,0 +1,133 @@
+-- Geração de Modelo físico
+-- Sql ANSI 2003 - brModelo.
+
+
+
+CREATE TABLE Busca_Por_Busca (
+Email_Cliente VARCHAR(20),
+CNPJ BIGINT(100),
+ID_Comida INTEGER,
+PRIMARY KEY(Email_Cliente,CNPJ,ID_Comida)
+)
+
+CREATE TABLE Tipo_Entrega (
+Tipo_Entrega_PK INTEGER PRIMARY KEY,
+Entrega_Grátis VARCHAR(5),
+Entrega_Rápida VARCHAR(5),
+CNPJ_FK BIGINT()
+)
+
+CREATE TABLE Telefone (
+Telefone_PK INTEGER PRIMARY KEY,
+Telefone BIGINT(12),
+Email_Cliente VARCHAR()
+)
+
+CREATE TABLE Emite (
+CNPJ BIGINT(100),
+ID_Relatório INTEGER
+)
+
+CREATE TABLE Relatório (
+ID_Relatório INTEGER PRIMARY KEY,
+Pedidos_Solicitados VARCHAR(10),
+Total_Recebido VARCHAR(10)
+)
+
+CREATE TABLE Endereço_Rest (
+Endereço_Rest_PK INTEGER PRIMARY KEY,
+Rua/Bairro CHAR(50),
+Número NUMERIC(4),
+CNPJ BIGINT()
+)
+
+CREATE TABLE Entrega (
+Confirma_Entrega CHAR(3),
+ID_NotaFiscal INTEGER
+)
+
+CREATE TABLE Local_Entrega (
+Local_Entrega_PK INTEGER PRIMARY KEY,
+Outro_End VARCHAR(20),
+Endereço VARCHAR(100),
+ID_NotaFiscal_FK INTEGER
+)
+
+CREATE TABLE Valor_Total (
+Valor_Total_PK INTEGER PRIMARY KEY,
+Tipo_Entrega VARCHAR(10),
+Valor_Comida VARCHAR(10),
+ID_NotaFiscal INTEGER
+)
+
+CREATE TABLE Total_Itens (
+Total_Itens_PK INTEGER PRIMARY KEY,
+Nome_Prato CHAR(10),
+Quantidade NUMERIC(10),
+ID_NotaFiscal INTEGER
+)
+
+CREATE TABLE Consulta (
+Email_Cliente VARCHAR(10)
+)
+
+CREATE TABLE Cliente (
+Nome_Cliente CHAR(10),
+Email_Cliente VARCHAR(20) PRIMARY KEY,
+Senha_Cliente VARCHAR(10)
+)
+
+CREATE TABLE Endereço (
+Endereço_PK INTEGER PRIMARY KEY,
+Rua/Bairro CHAR(50),
+Número INTEGER,
+Email_Cliente VARCHAR(),
+FOREIGN KEY(Email_Cliente) REFERENCES Cliente (Email_Cliente)
+)
+
+CREATE TABLE Nota Fiscal (
+ID_NotaFiscal INTEGER PRIMARY KEY,
+Nome_Rest CHAR(10),
+Nome_Cliente CHAR(10),
+Data/Hora DATETIME
+)
+
+CREATE TABLE Comida (
+Descrição_Comida VARCHAR(10),
+Valor_Comida DECIMAL(10),
+ID_Comida INTEGER PRIMARY KEY,
+Nome_Prato CHAR(10),
+CNPJ BIGINT(100)
+)
+
+CREATE TABLE Restaurante (
+CNPJ BIGINT(100) PRIMARY KEY,
+Rest_Popular VARCHAR(10),
+Nome_Rest CHAR(10),
+Email_Rest VARCHAR(20),
+Categoria CHAR(10),
+Status CHAR(10),
+Avaliação CHAR(10),
+Senha_Rest VARCHAR(10),
+Mais_Pedidos CHAR(10)
+)
+
+CREATE TABLE Pedidos_Realizados_ (
+ID_NotaFiscal INTEGER,
+ID_Comida INTEGER,
+CNPJ BIGINT(100),
+ID_Pedido INTEGER,
+PRIMARY KEY(ID_NotaFiscal,ID_Comida,CNPJ,ID_Pedido)
+)
+
+ALTER TABLE Tipo_Entrega ADD FOREIGN KEY(CNPJ_FK) REFERENCES Restaurante (CNPJ)
+ALTER TABLE Telefone ADD FOREIGN KEY(Email_Cliente) REFERENCES Cliente (Email_Cliente)
+ALTER TABLE Emite ADD FOREIGN KEY(CNPJ) REFERENCES Restaurante (CNPJ)
+ALTER TABLE Emite ADD FOREIGN KEY(ID_Relatório) REFERENCES Relatório (ID_Relatório)
+ALTER TABLE Endereço_Rest ADD FOREIGN KEY(CNPJ) REFERENCES Restaurante (CNPJ)
+ALTER TABLE Entrega ADD FOREIGN KEY(ID_NotaFiscal) REFERENCES Nota Fiscal (ID_NotaFiscal)
+ALTER TABLE Local_Entrega ADD FOREIGN KEY(ID_NotaFiscal_FK) REFERENCES Nota Fiscal (ID_NotaFiscal)
+ALTER TABLE Valor_Total ADD FOREIGN KEY(ID_NotaFiscal) REFERENCES Nota Fiscal (ID_NotaFiscal)
+ALTER TABLE Total_Itens ADD FOREIGN KEY(ID_NotaFiscal) REFERENCES Nota Fiscal (ID_NotaFiscal)
+ALTER TABLE Consulta ADD FOREIGN KEY(Email_Cliente) REFERENCES Cliente (Email_Cliente)
+ALTER TABLE Comida ADD FOREIGN KEY(CNPJ) REFERENCES Restaurante (CNPJ)
