@@ -1,17 +1,14 @@
 <p>
 Cadastro de usuário
 Clientes :
-
 Nome, email, endereço, telefone e senha;
 </p>
 <p>
 Restaurantes:
-
 Nome, email, endereço, telefone, senha, categoria, status e avaliação
 </p>
 <p>
-Funções do Cliente:
- 
+Funções do Cliente: 
 Buscar o nome do restaurante;
 Buscar uma comida pelo nome ou descrição;
 Recuperar histórico dos pedidos;
@@ -19,7 +16,6 @@ Pedidos recentes e antigos.
 </p>
 <p>
 Funções do Restaurante
-
 Emitir os relatórios de pedidos solicitados e total recebido;
 Preço médio de cada comida num perído de 1 dia, 7 dias ou 30 dias anteriores;
 Comida mais solicitada por mês;
@@ -28,7 +24,6 @@ Optam pelo tipo de entrega (Grátis ou Paga);
 </p>
 <p>
 Funções do App
-
 O app informará as opções de restaurantes por categorização e critérios dinâmicos:
 
 Mais pedidos: restaurante com uma das cinco comidas mais pedidas no dia anterior;
