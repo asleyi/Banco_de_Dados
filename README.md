@@ -1,4 +1,7 @@
 <p>
+  Este projeto é um sistema de venda e compra de comidas baseado no Ifood, UberEates etc. 
+</p>
+<p>
 <h1>Cadastro de usuário</h1>
 
 <h2>Clientes:</h2>
@@ -11,8 +14,11 @@ Nome, email, endereço, telefone, senha, categoria, status e avaliação
 <p>
 <h2>Funções do Cliente:</h2> 
 Buscar o nome do restaurante;
+
 Buscar uma comida pelo nome ou descrição;
+
 Recuperar histórico dos pedidos;
+
 Pedidos recentes e antigos.
 </p>
 <p>
