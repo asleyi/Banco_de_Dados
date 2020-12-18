@@ -23,7 +23,8 @@ Gerenciar o cardápio alterando as informações da comida (preço, nome, descri
 Optam pelo tipo de entrega (Grátis ou Paga);
 </p>
 <p>
-Funções do App
+Funções do App:
+
 O app informará as opções de restaurantes por categorização e critérios dinâmicos:
 
 Mais pedidos: restaurante com uma das cinco comidas mais pedidas no dia anterior;
