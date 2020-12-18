@@ -16,9 +16,7 @@ Nome, email, endereço, telefone, senha, categoria, status e avaliação
 Buscar o nome do restaurante;
 
 Buscar uma comida pelo nome ou descrição;
-
-Recuperar histórico dos pedidos;
-Pedidos recentes e antigos.
+Recuperar histórico dos pedidos: Pedidos recentes e antigos.
 </p>
 <p>
 <h2>Funções do Restaurante: </h2>
@@ -27,9 +25,7 @@ Emitir os relatórios de pedidos solicitados e total recebido;
 Preço médio de cada comida num perído de 1 dia, 7 dias ou 30 dias anteriores;
 
 Comida mais solicitada por mês;
-
 Gerenciar o cardápio alterando as informações da comida (preço, nome, descrição);
-
 Optam pelo tipo de entrega (Grátis ou Paga);
 </p>
 <p>
