@@ -1,4 +1,4 @@
-#import psycopg2
+import psycopg2
 #import sys
 
 from cliente import Cliente
@@ -128,8 +128,8 @@ def Menu(tipo_usuario, info_usuario):
     print("\033[33m **************** MENU DO APP ************** \033[37m")
 
     if tipo_usuario == 'cliente':
-      cpf, nome, email, senha, telefone1, _ = info_usuario
-      cliente = Cliente(cpf, nome, email, senha, telefone1, _)
+      cpf, nome, email, senha, telefone1,telefone2, endereco = info_usuario
+      cliente = Cliente(cpf, nome, email, senha, telefone1, telefone2, endereco)
 
       opcao = input("""
       \033[36m[ 1 ]\033[37m - Buscar comida
