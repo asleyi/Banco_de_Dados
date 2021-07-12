@@ -17,7 +17,7 @@ class Restaurante:
     try:
       cur.execute(f"""INSERT INTO restaurante VALUES
       ('{self.cnpj}', '{self.email}', '{self.senha}', '{self.nome}',
-      {self.entrega}, '{self.aberto}', '{self.endereco}');""")
+      '{self.entrega}', '{self.aberto}', '{self.endereco}');""")
       conn.commit()
     except Exception as err:
       raise Exception (f'Erro no cadastro do restaurante. {err}') 
